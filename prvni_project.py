@@ -35,10 +35,15 @@ else:
 
     #vyber textu
 
-    while ((str_cislo_vybraneho_textu.isdigit()) or (cislo_vybraneho_textu <=0) or (cislo_vybraneho_textu > 3)) :
+
+    while ((cislo_vybraneho_textu <=0) or (cislo_vybraneho_textu > 3)) :
+
+
         str_cislo_vybraneho_textu = input('Enter a number btw. 1 and 3 to select: ')
         print(oddelovac)
-        cislo_vybraneho_textu = int(str_cislo_vybraneho_textu)
+        if str_cislo_vybraneho_textu.isdigit():
+            cislo_vybraneho_textu = int(str_cislo_vybraneho_textu)
+        else: cislo_vybraneho_textu = 0
 
 
     pracovni_text = TEXTS[cislo_vybraneho_textu - 1]
