@@ -29,21 +29,23 @@ else:
         f'Welcome to the app, {barva_start}{username}{barva_stop}\nWe have {barva_start}3{barva_stop} texts to be analyzed.',
         sep='')
     print(oddelovac)
-    str_cislo_vybraneho_textu = ''
-    cislo_vybraneho_textu = 0
+
 
 
     #vyber textu
+    str_cislo_vybraneho_textu = ''
+    cislo_vybraneho_textu = 0
 
-
-    while ((cislo_vybraneho_textu <=0) or (cislo_vybraneho_textu > 3)) :
-
-
+    while ((cislo_vybraneho_textu <=0) or (cislo_vybraneho_textu > 3)):
+        if str_cislo_vybraneho_textu != '':
+            print("Text with such a number does not exist, again !")
+            print(oddelovac)
         str_cislo_vybraneho_textu = input('Enter a number btw. 1 and 3 to select: ')
         print(oddelovac)
         if str_cislo_vybraneho_textu.isdigit():
             cislo_vybraneho_textu = int(str_cislo_vybraneho_textu)
-        else: cislo_vybraneho_textu = 0
+        else:
+            cislo_vybraneho_textu = 0
 
 
     pracovni_text = TEXTS[cislo_vybraneho_textu - 1]
@@ -100,4 +102,6 @@ else:
             radek = '*' * cetnost
             print(f'{barva_start}{str(delka).rjust(2)}.{barva_stop}|{radek.ljust(20)}|{barva_start}{cetnost}{barva_stop}')
 
+    print(oddelovac)
+    print ('End of program.')
     print(oddelovac)
