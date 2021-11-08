@@ -1,7 +1,7 @@
 '''
 author = 
 '''
-TEXTS = ['''
+texts = ['''
 Situated about 10 miles west of Kemmerer, 
 Fossil Butte is a ruggedly impressive 
 topographic feature that rises sharply 

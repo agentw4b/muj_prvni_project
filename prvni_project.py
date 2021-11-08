@@ -2,7 +2,7 @@
 # Autor : Lubomír Klubus
 
 #import textu
-from task_template import TEXTS
+from task_template import texts
 
 #import users
 from usersfile import users
@@ -19,10 +19,9 @@ password = input('password: ')
 print (oddelovac)
 
 # overeni uzivatele a uvitani
-if not(username in users and password == users.get(username)):
+
+if users.get(username) != password:
     print ("Wrong username or password.")
-
-
 
 else:
     print(
@@ -30,13 +29,11 @@ else:
         sep='')
     print(oddelovac)
 
-
-
     #vyber textu
     str_cislo_vybraneho_textu = ''
     cislo_vybraneho_textu = 0
 
-    while ((cislo_vybraneho_textu <=0) or (cislo_vybraneho_textu > 3)):
+    while cislo_vybraneho_textu not in range(1, len(texts) + 1):
         if str_cislo_vybraneho_textu != '':
             print("Text with such a number does not exist, again !")
             print(oddelovac)
@@ -47,9 +44,7 @@ else:
         else:
             cislo_vybraneho_textu = 0
 
-
-    pracovni_text = TEXTS[cislo_vybraneho_textu - 1]
-
+    pracovni_text = texts[cislo_vybraneho_textu - 1]
 
     # rozdělím `str` na `list`
     vycistena_slova = list()
@@ -58,7 +53,6 @@ else:
         vycistena_slova.append(
             slovo.strip(",.:;")
         )
-
 
     #analyza textu
     pocet_slov = len(vycistena_slova)
@@ -73,16 +67,13 @@ else:
         seznam_delek.append(len(slova))
         if slova.istitle():
             pocet_title += 1
-        if slova.isupper() and slova.isalpha():
+        elif slova.isupper() and slova.isalpha():
             pocet_upper += 1
-        if slova.islower() and slova.isalpha():
+        elif slova.islower() and slova.isalpha():
             pocet_lower += 1
-        if slova.isdigit():
+        elif slova.isdigit():
             pocet_numeric += 1
             suma += int(slova)
-
-
-
 
     #Vypis vysledku analyzy
     print(f'There are {barva_start}{pocet_slov}{barva_stop} words in the selected text.')
@@ -96,7 +87,7 @@ else:
     print (oddelovac)
     print('LEN| OCCURENCES         |NR.')
     print(oddelovac)
-    for delka in range(min(seznam_delek),max(seznam_delek)+1):
+    for delka in range(min(seznam_delek), max(seznam_delek)+1):
         cetnost = seznam_delek.count(delka)
         if  cetnost != 0:
             radek = '*' * cetnost
