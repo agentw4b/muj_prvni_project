@@ -76,12 +76,12 @@ else:
             suma += int(slova)
 
     #Vypis vysledku analyzy
-    print(f'There are {barva_start}{pocet_slov}{barva_stop} words in the selected text.')
-    print(f'There are {barva_start}{pocet_title}{barva_stop} titlecase words.')
-    print(f'There are {barva_start}{pocet_upper}{barva_stop} uppercase words.')
-    print(f'There are {barva_start}{pocet_lower}{barva_stop} lowercase words.')
-    print(f'There are {barva_start}{pocet_numeric}{barva_stop} numeric strings.')
-    print(f'The sum of all the numbers {barva_start}{suma}{barva_stop} ')
+    print(f'There are {barva_start}{pocet_slov}{barva_stop} words in the selected text.\n'
+          f'There are {barva_start}{pocet_title}{barva_stop} titlecase words.\n'
+          f'There are {barva_start}{pocet_upper}{barva_stop} uppercase words.\n'
+          f'There are {barva_start}{pocet_lower}{barva_stop} lowercase words.\n'
+          f'There are {barva_start}{pocet_numeric}{barva_stop} numeric strings.\n'
+          f'The sum of all the numbers {barva_start}{suma}{barva_stop} ')
 
     #Vypis cetnosti delek slov
     print (oddelovac)
