@@ -20,7 +20,7 @@ print (oddelovac)
 
 # overeni uzivatele a uvitani
 if not(username in users and password == users.get(username)):
-    print ("Wrong username or password. END ")
+    print ("Wrong username or password.")
 
 
 
@@ -102,6 +102,6 @@ else:
             radek = '*' * cetnost
             print(f'{barva_start}{str(delka).rjust(2)}.{barva_stop}|{radek.ljust(20)}|{barva_start}{cetnost}{barva_stop}')
 
-    print(oddelovac)
-    print ('End of program.')
-    print(oddelovac)
+print(oddelovac)
+print ('End of program.')
+print(oddelovac)
